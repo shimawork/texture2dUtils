@@ -14,6 +14,7 @@ Utility to enlarge / reduce / rotate / border Unity's Texture2D
 //128ピクセルの枠で囲う
 var dstTex = Texture2DUtils.expandTexture2D(srcTex, srcTex.width + 128 , srcTex.height + 128 );
 ```
+<img src="https://github.com/shimawork/images/blob/master/waku.png">
 
 
 ## 2.回転
@@ -23,6 +24,7 @@ var dstTex = Texture2DUtils.expandTexture2D(srcTex, srcTex.width + 128 , srcTex.
 //４５度傾ける
 var dstTex = Texture2DUtils.tiltTexture2D(srcTex, (double)( 45 * Math.PI / 180));
 ```
+<img src="https://github.com/shimawork/images/blob/master/45.png">
 
 
 ## ３.拡大・縮小
