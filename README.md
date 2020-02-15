@@ -8,7 +8,7 @@ Utility to enlarge / reduce / rotate / border Unity's Texture2D
 
 ## 1.縁取り
 　元の画像にたいして指定したサイズで拡大します。
- （キャンパスサイズの変更イメージ） 
+ （キャンパスサイズの変更的なやつです） 
 
 ```
 //128ピクセルの枠で囲う
