@@ -25,7 +25,7 @@ Utility to enlarge / reduce / rotate / border Unity's Texture2D
 　元の画像を指定されたサイズで拡大縮小します。
 
 ```
-    var tex = Texture2DUtils.resizeTexture(srcTexture2D, srcTexture2D.width + 24 , srcTexture2D.height + 24 );
+    var tex = Texture2DUtils.resizeTexture(srcTexture2D, 1024 , 1024 );
 ```
 
 ## 注意事項
