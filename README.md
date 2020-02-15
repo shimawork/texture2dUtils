@@ -8,24 +8,29 @@ Utility to enlarge / reduce / rotate / border Unity's Texture2D
 
 ## 1.縁取り
 　元の画像にたいして指定したサイズで拡大します。
- （キャンパスサイズの変更イメージ）
+ （キャンパスサイズの変更イメージ） 
 
 ```
-    var tex = Texture2DUtils.expandTexture2D(srcTexture2D, srcTexture2D.width + 24 , srcTexture2D.height + 24 );
+//128ピクセルの枠で囲う
+var dstTex = Texture2DUtils.expandTexture2D(srcTex, srcTex.width + 128 , srcTex.height + 128 );
 ```
- 
+
+
 ## 2.回転
 　元の画像を中心点を軸に指定された角度で変換します。
 
 ```
-    var tex = Texture2DUtils.tiltTexture2D(srcTexture2D, (double)( 45 * Math.PI / 180));
+//４５度傾ける
+var dstTex = Texture2DUtils.tiltTexture2D(srcTex, (double)( 45 * Math.PI / 180));
 ```
- 
+
+
 ## ３.拡大・縮小
 　元の画像を指定されたサイズで拡大縮小します。
 
 ```
-    var tex = Texture2DUtils.resizeTexture(srcTexture2D, 1024 , 1024 );
+//256*256 に リサイズ
+var dstTex = Texture2DUtils.resizeTexture(srcTex, ２５６ , ２５６ );
 ```
 
 ## 注意事項
@@ -33,3 +38,9 @@ Utility to enlarge / reduce / rotate / border Unity's Texture2D
 　・ Textureのinspectorでread/write Enabled は　チェックしておいてください。
 
 　・ サイズの小さい画像を回転すると、ジャギーがでます。この場合、resizeTextureメソッドで拡大した画像を回転させて元のサイズにresizeTextureメソッドで縮小するとジャギーが抑えられます。
+``` 
+//ちいさい画像のジャギーの抑え方
+var dstTex = Texture2DUtils.resizeTexture(srcTex, 1024 , 1024 ); //大きくして
+dstTex = Texture2DUtils.tiltTexture2D(dstTex, (double)( 45 * Math.PI / 180)); //まわして
+dstTex = Texture2DUtils.resizeTexture(dstTex, srcTex.width , srcTex.height ); //元の大きさに戻す。
+```
